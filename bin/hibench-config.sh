@@ -13,9 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-#export HADOOP_HOME=
-#export JAVA_HOME=/usr/lib/jvm/default-java
+set -u
 
 this="${BASH_SOURCE-$0}"
 bin=$(cd -P -- "$(dirname -- "$this")" && pwd -P)
@@ -29,6 +27,14 @@ export HIBENCH_VERSION="2.2"
 HADOOP_EXECUTABLE= 
 HADOOP_CONF_DIR=
 HADOOP_EXAMPLES_JAR=
+HADOOP_HOME=`printenv HADOOP_HOME`
+HADOOP_EXECUTABLE=`printenv HADOOP_EXECUTABLE`
+HIBENCH_HOME=`printenv HIBENCH_HOME`
+HIBENCH_CONF=`printenv HIBENCH_CONF`
+HIVE_HOME=`printenv HIVE_HOME`
+MAHOUT_HOME=`printenv MAHOUT_HOME`
+NUTCH_HOME=`printenv NUTCH_HOME`
+DATATOOLS=`printenv DATATOOLS`
 
 if [ -n "$HADOOP_HOME" ]; then
 	HADOOP_EXECUTABLE=$HADOOP_HOME/bin/hadoop

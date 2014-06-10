@@ -13,8 +13,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-set -u
-
 this="${BASH_SOURCE-$0}"
 bin=$(cd -P -- "$(dirname -- "$this")" && pwd -P)
 script="$(basename -- "$this")"
@@ -28,7 +26,6 @@ HADOOP_EXECUTABLE=
 HADOOP_CONF_DIR=
 HADOOP_EXAMPLES_JAR=
 HADOOP_HOME=`printenv HADOOP_HOME`
-HADOOP_EXECUTABLE=`printenv HADOOP_EXECUTABLE`
 HIBENCH_HOME=`printenv HIBENCH_HOME`
 HIBENCH_CONF=`printenv HIBENCH_CONF`
 HIVE_HOME=`printenv HIVE_HOME`
